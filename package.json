@@ -1,0 +1,25 @@
+{
+  "name": "turn",
+  "displayName": "Atlantis New Origins Turn",
+  "description": "Turn of Atlantis New Origins PbeM Game",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "turn",
+      "aliases": ["Atlantis New Origins Turn", "turn"],
+      "extensions": [".turn"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "turn",
+      "scopeName": "source.turn",
+      "path": "./syntaxes/turn.tmLanguage.json"
+    }]
+  }
+}

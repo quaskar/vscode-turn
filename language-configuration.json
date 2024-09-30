@@ -1,0 +1,29 @@
+{
+    "comments": {
+        // symbol used for single line comment. Remove this entry if your language does not support line comments
+        "lineComment": ";"
+    },
+    // symbols used as brackets
+    "brackets": [
+        ["TURN", "ENDTURN"],
+        ["FORM", "END"],
+        ["turn", "endturn"],
+        ["form", "end"]
+    ],
+    // symbols that are auto closed when typing
+    "autoClosingPairs": [
+        ["TURN", "\nENDTURN"],
+        ["FORM", "\nEND"],
+        ["turn", "\nendturn"],
+        ["form", "\nend"],
+        ["\"", "\""]
+    ],
+    // symbols that can be used to surround a selection
+    "surroundingPairs": [
+        ["TURN", "ENDTURN"],
+        ["FORM", "END"],
+        ["turn", "endturn"],
+        ["form", "end"],
+        ["\"", "\""]
+    ]
+}

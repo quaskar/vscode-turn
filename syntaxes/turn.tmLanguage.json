@@ -1,0 +1,42 @@
+{
+	"scopeName": "source.turn",
+	"patterns": [
+		{ "include": "#makro" },
+		{ "include": "#comment" },
+		{ "include": "#controlflow" },
+		{ "include": "#command" },
+		{ "include": "#skill" },
+		{ "include": "#item" },
+		{ "include": "#numbers" }
+	],
+	"repository": {
+		"macro": {
+			"match": "^\\s*#.*",
+			"name": "macro"
+		},		
+		"comment": {
+			"match": "\\s*;.*",
+	  		"name": "comment.line.semicolon"
+		},
+		"controlflow": {
+			"match": "(?i)\\b(?:unit|TURN|TURNEND|FORM|END)\\b",
+			"name": "keyword"
+	  	},
+	  	"command": {
+			"match": "(?i)\\b@?(?:ADDRESS|ARMOR|AUTOTAX|AVOID|BEHIND|CLAIM|COMBAT|CONSUME|DECLARE|DESCRIBE|FACTION|GUARD|HOLD|NAME|NOAID|SHARE|NOCROSS|OPTION|PASSWORD|PREPARE|REVEAL|SHOW|SPOILS|WEAPON|FIND|LEAVE|ENTER |PROMOTE|ATTACK|STEAL|ASSASSINATE|GIVE|TAKE|JOIN|EXCHANGE|DESTROY|PILLAGE|TAX|GUARD|CAST|SELL|BUY|FORGET|QUIT|RESTART|WITHDRAW|SACRIFICE|ADVANCE|MOVE|SAIL|TEACH|STUDY|PRODUCE|BUILD|ENTERTAIN|WORK|ANNIHILATE)\\b",
+			"name": "entity.name.function"
+	  	},
+	  	"skill": {
+			"match": "(?i)\\b(?:mining|MINI|lumberjack|LUMB|quarrying|QUAR|hunting|HUNT|fishing|FISH|herb lore|HERB|horse training|HORS|weaponsmith|WEAP|armorer|ARMO|carpenter|CARP|building|BUIL|shipbuilding|SHIP|entertainment|ENTE|tactics|TACT|combat|COMB|riding|RIDI|crossbow|XBOW|longbow|LBOW|stealth|STEA|observation|OBSE|healing|HEAL|sailing|SAIL|farming|FARM|force|FORC|pattern|PATT|spirit|SPIR|fire|FIRE|earthquake|EQUA|force shield|FSHI|energy shield|ESHI|spirit shield|SSHI|magical healing|MHEA|gate lore|GATE|farsight|FARS|teleportation|TELE|portal lore|PORT|mind reading|MIND|weather lore|WEAT|summon wind|SWIN|summon storm|SSTO|summon tornado|STOR|call lightning|CALL|clear skies|CLEA|earth lore|EART|wolf lore|WOLF|bird lore|BIRD|dragon lore|DRAG|necromancy|NECR|summon skeletons|SUSK|raise undead|RAIS|summon lich|SULI|create aura of fear|FEAR|summon black wind|SBLA|banish undead|BUND|demon lore|DEMO|summon imps|SUIM|summon demon|SUDE|summon balrog|SUBA|banish demons|BDEM|illusion|ILLU|phantasmal entertainment|PHEN|invisibility|INVI|true seeing|TRUE|dispel illusions|DISP|artifact lore|ARTI|engrave runes of warding|ENGR|construct gate|CGAT|enchant swords|ESWO|enchant armor|EARM|enchant shields|ESHD|construct portal|CPOR|manipulation|MANI|create flaming sword|CFSW|cooking|COOK|quartermaster|QUAM|transmutation|TRNS|annihilation|ANNI)\\b",
+			"name": "variable.other"
+	  	},
+	  	"item": {
+			"match": "(?i)\\b(?:leader|LEAD|wood elf|WELF|high elf|HELF|ice dwarf|IDWA|hill dwarf|HDWA|under dwarf|UDWA|orc|ORC|gnome|GNOM|centaur|CTAU|silver|SILV|grain|GRAI|livestock|LIVE|iron|IRON|wood|WOOD|stone|STON|fur|FUR|fish|FISH|herb|HERB|horse|HORS|Longship|LONG|Raft|RAFT|Cog|COG|Galleon|GALL|Galley|GLLY|Corsair|CORS|Balloon|BALL|Airship|AIRS|Cloudship|CLOU|sword|SWOR|crossbow|XBOW|longbow|LBOW|chain armor|CARM|plate armor|PARM|wagon|WAGO|mithril|MITH|ironwood|IRWD|winged horse|WING|floater hide|FLOA|rootstone|ROOT|yew|YEW|mithril sword|MSWO|mithril armor|MARM|double bow|DBOW|ivory|IVOR|pearls|PEAR|jewelry|JEWE|figurines|FIGU|tarot cards|TARO|caviar|CAVI|wine|WINE|spices|SPIC|chocolate|CHOC|truffles|TRUF|vodka|VODK|perfume|PERF|silk|SILK|cotton|COTT|lion|LION|wolf|WOLF|grizzly bear|GRIZ|crocodile|CROC|anaconda|ANAC|giant scorpion|SCOR|polar bear|POLA|giant rat|GRAT|giant spider|GSPI|giant lizard|GLIZ|trent|TREN|roc|ROC|bog thing|BOGT|kong|KONG|sphinx|SPHI|ice wurm|ICEW|dragon|DRAG|centaur|CENT|kobold|KOBO|ogre|OGRE|lizard man|LMAN|wild man|WMAN|sandling|SAND|yeti|YETI|goblin|GOBL|troll|TROL|ettin|ETTI|skeleton|SKEL|undead|UNDE|lich|LICH|imp|IMP|demon|DEMO|balrog|BALR|eagle|EAGL|amulet of invulnerability|XXXX|ring of invisibility|RING|cloak of invulnerability|CLOA|staff of fire|STAF|amulet of true seeing|AMTS|amulet of protection|AMPR|runesword|RUNE|shieldstone|SHST|magic carpet|CARP|illusory wolf|IWOLF|illusory eagle|IEAGL|illusory dragon|IDRAG|illusory skeleton|ISKEL|illusory undead|IUNDE|illusory lich|ILICH|illusory imp|IIMP|illusory demon|IDEMO|illusory balrog|IBALR|portal|PORT|pick|PICK|spear|SPEA|axe|AXE|hammer|HAMM|magic crossbow|MXBO|magic wagon|MWAG|glider|GLID|net|NET|lasso|LASS|bag|BAG|spinning wheel|SPIN|leather armor|LARM|pirates|PIRA|kraken|KRAK|merfolk|MERF|elemental|ELEM|human|HUMN|lizardman|LIZA|goblin|GBLN|gnoll|GNOL|drow elf|DRLF|mushroom|MUSH|battle axe|BAXE|admantium|ADMT|admantium sword|ASWR|admantium ring mail|ARNG|admantium plate mail|AARM|camel|CAME|drow warrior|DROW|hydra|HYDR|storm giant|STGI|cloud giant|CLGI|illyrthid|ILLY|evil sorcerer|SORC|evil magician|MAGI|dark mage|DMAG|evil warrior|WARR|ice dragon|IDRA|healing potion|HPOT|gem|GEM|javelin|JAVE|pike|PIKE|flaming sword|FSWO|meal|MEAL|mithril shield|MSHD|iron shield|ISHD|wooden shield|WSHD|aegis|AEGS|windchime|WCHM|gate crystal|GTCR|staff of healing|STAH|scrying orb|SORB|cornucopia|CORN|book of exorcism|BKEX|holy symbol|HLYS|censer of protection|CNSR|giant turtle|TURT|catapult|CATP|steel defender|STED|devil|DEVL|imprisoned entity|IENT)s?\\b",
+			"name": "string"
+	  	},
+		"numbers": {
+			"match": "\\b\\d+\\b",
+			"name": "constant.numeric.integer.turn"
+		}
+	}
+  }
