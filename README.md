@@ -1,6 +1,5 @@
 # VSCode Language Extension for Atlantis New Origins Turn Files
-
-This is the README for your extension "turn". After writing up a brief description, we recommend including the following sections.
+This language extension for Visual Studio Code is aiming to support players of the PbeM game Atlantis New Origins (https://atlantis-pbem.com) creating their turn files by highlighting turn commands, items, skills and objects.
 
 <img src="images/example-screen.png">
 
@@ -8,30 +7,17 @@ This is the README for your extension "turn". After writing up a brief descripti
 * Syntax highlighting of commands, skills, items and object
 * Auto-closing of sections line TURN and FORM statements
 
-### Future Features
-* Item, skill and object exlanation window while hovering over them
-* Visualization of the map
-* Cut off of turn file out of report file
-* Automatic submition of report
+### Future Features (wish list - possibiity unclear)
+* Item, skill and object explaination window while hovering over statement
+* Visualization of complete  map
+* Cut-off turn templates out of report files
+* Automatic upload of turn file to atlantis webpage
 
 ## Installation
-To start using your extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Code.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+To start using the extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Visual Studio Code.
 
 ## Known Issues
-
-* #altantis macro not identified
+* altantis macro not identified
 
 ## Release Notes
-
 No official release yet
