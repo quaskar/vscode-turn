@@ -7,7 +7,7 @@ This language extension for Visual Studio Code is aiming to support players of t
 * Syntax highlighting of commands, skills, items and object
 * Auto-closing of sections line TURN and FORM statements
 
-### Future Features (wish list - possibiity unclear)
+### Future Features (wish list - possibility unclear)
 * Item, skill and object explaination window while hovering over statement
 * Visualization of complete  map
 * Cut-off turn templates out of report files
