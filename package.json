@@ -3,12 +3,14 @@
   "displayName": "Atlantis New Origins Turn",
   "description": "Turn of Atlantis New Origins PbeM Game",
   "version": "0.0.1",
+  "publisher": "Sebastian Pliefke",
   "engines": {
     "vscode": "^1.93.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "main": "./src/extension.js",
   "contributes": {
     "languages": [{
       "id": "turn",
@@ -20,6 +22,14 @@
       "language": "turn",
       "scopeName": "source.turn",
       "path": "./syntaxes/turn.tmLanguage.json"
+    }],
+    "hover": [{
+        "language": "turn",
+        "provider": "./src/hoverProvider.js"
+    }],
+    "commands": [{
+      "command": "extension.cropTurnTemplate",
+      "title": "Turn: Crop Turn Template"
     }]
   }
 }
