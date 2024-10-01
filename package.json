@@ -30,6 +30,10 @@
     "commands": [{
       "command": "extension.cropTurnTemplate",
       "title": "Turn: Crop Turn Template"
-    }]
+    },{
+      "command": "extension.sortErrorsAndEvents",
+      "title": "Turn: Sort Errors and Events into Turn Template"
+    }
+  ]
   }
 }

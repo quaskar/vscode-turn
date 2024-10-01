@@ -47,6 +47,71 @@ function activate(context) {
   });
 
   context.subscriptions.push(disposable);
+
+  let disposable2 = vscode.commands.registerCommand('extension.sortErrorsAndEvents', async function () {
+
+    // Get the active text editor
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) {
+      vscode.window.showErrorMessage('No active editor detected.');
+      return;
+    }
+
+    const document = editor.document;
+    const docText = document.getText();
+    let Log = "";
+
+    // Get all errors during report collapsed to single string (. separated)
+    const ErrorIndex = docText.indexOf("Errors during turn:");
+    let ErrorLine = document.positionAt(ErrorIndex).line + 1;
+    while (document.lineAt(ErrorLine).text != "") {
+      Log += "E " + document.lineAt(ErrorLine).text;
+      ErrorLine++;
+    }
+
+    // Get all events during report collapsed to single string (. separated)
+    const EventIndex = docText.indexOf("Events during turn:");
+    let EventLine = document.positionAt(EventIndex).line + 1;
+    while (document.lineAt(EventLine).text != "") {
+      Log += "I " + document.lineAt(EventLine).text;
+      EventLine++;
+    }
+
+    Log = Log.replaceAll("I  ", "");
+    Log = Log.replaceAll("E  ", "");
+
+
+    // find and insert Log lines
+    editor.edit(editBuilder => {
+      Log.split(".").forEach((LogLine) => {
+        if (LogLine != "") {
+          const LogUnitId = LogLine.match(/\((\d+)\)/)[1];
+
+          // find unit in turn template
+          let UnitIndex = docText.indexOf("unit " + LogUnitId, docText.indexOf("#atlantis"));
+          let UnitLine = document.positionAt(UnitIndex).line + 1;
+    
+          // find end of comment block of unit attributes
+          while (document.lineAt(UnitLine).text[0] == ";") {
+            UnitLine++;
+          }
+
+          // put seperator before first Log line
+          /*if (document.lineAt(UnitLine-1).text.substring(0,3) == ";  ") {
+            editBuilder.insert(new vscode.Position(UnitLine,0), ";---\n");
+            //UnitLine++;
+          }*/
+          
+          // Insert Log Message
+          editBuilder.insert(new vscode.Position(UnitLine,0), ";" + LogLine + '\n');
+        }
+      });
+    });
+
+    return;
+  });
+
+  context.subscriptions.push(disposable2);
 }
 
 function deactivate() {}
