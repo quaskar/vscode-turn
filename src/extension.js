@@ -82,6 +82,7 @@ function activate(context) {
 
 
     // find and insert Log lines
+    let PastUnitId = []
     editor.edit(editBuilder => {
       Log.split(".").forEach((LogLine) => {
         if (LogLine != "") {
@@ -96,11 +97,11 @@ function activate(context) {
             UnitLine++;
           }
 
-          // put seperator before first Log line
-          /*if (document.lineAt(UnitLine-1).text.substring(0,3) == ";  ") {
+          // put separator before first Log line
+          if (!PastUnitId.includes(LogUnitId)) {
             editBuilder.insert(new vscode.Position(UnitLine,0), ";---\n");
-            //UnitLine++;
-          }*/
+            PastUnitId.push(LogUnitId);
+          }
           
           // Insert Log Message
           editBuilder.insert(new vscode.Position(UnitLine,0), ";" + LogLine + '\n');
