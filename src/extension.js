@@ -113,6 +113,26 @@ function activate(context) {
   });
 
   context.subscriptions.push(disposable2);
+
+
+  const hoverProvider = vscode.languages.registerHoverProvider("turn", {
+    provideHover(document, position, token) {
+      const range = document.getWordRangeAtPosition(position);
+      const word = document.getText(range);
+
+      const referenceInfo = {
+        "STUDY": "A command to study a skill",
+        "unit": "Unit entry point"
+      };
+
+      if (word in referenceInfo) {
+        return new vscode.Hover(referenceInfo[word]);
+      }
+      return undefined;
+    }
+  });
+
+  context.subscriptions.push(hoverProvider);
 }
 
 function deactivate() {}
