@@ -1,7 +1,9 @@
 {
 	"scopeName": "source.turn",
 	"patterns": [
-		{ "include": "#makro" },
+		{ "include": "#macro" },
+		{ "include": "#comment_error" },
+		{ "include": "#comment_event" },
 		{ "include": "#comment" },
 		{ "include": "#controlflow" },
 		{ "include": "#command" },
@@ -14,6 +16,14 @@
 			"match": "^\\s*#.*",
 			"name": "macro"
 		},		
+		"comment_error": {
+			"match": "\\s*;E.*",
+	  		"name": "string"
+		},
+		"comment_event": {
+			"match": "\\s*;I.*",
+	  		"name": "variable"
+		},
 		"comment": {
 			"match": "\\s*;.*",
 	  		"name": "comment.line.semicolon"
