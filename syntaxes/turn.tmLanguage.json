@@ -17,11 +17,11 @@
 			"name": "macro"
 		},		
 		"comment_error": {
-			"match": "\\s*;E.*",
+			"match": "\\s*;E\\s.*",
 	  		"name": "string"
 		},
 		"comment_event": {
-			"match": "\\s*;I.*",
+			"match": "\\s*;I\\s.*",
 	  		"name": "variable"
 		},
 		"comment": {
